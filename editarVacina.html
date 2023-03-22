@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Página de edição de vacina do MyHealth. Um site para contorlar as suas vacinas" >
+        <title>MyHealth - Editar Vacina</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    </head>
+    <body>
+        <header>
+            <span><img></img>MyHealth</span>
+            <span><button>Minhas vacinas</button></span>
+            <span><button>Logout</button></span>
+        </header>
+        <main>
+            <button>Excluir</button>
+            <form action="">
+                <div><label fname="dataVac">Data de vacinação</label><input type="date" name="dataVac" id="dataVac" value="12/08/2022"></div>
+                <div>Vacina<input type="text" value="Hepatite B"></div>
+                <div>Dose
+                    <input type="radio" name="dose" id="1a. dose" value="1a. dose">
+                    <label for="1a. dose">1a. Dose</label>
+                    <input type="radio" name="dose" id="2a. dose" value="2a. dose">
+                    <label for="2a. dose">2a. Dose</label>
+                    <input type="radio" name="dose" id="3a. dose" value="3a. dose">
+                    <label for="3a. dose">2a. Dose</label>
+                    <input type="radio" name="dose" id="reforço" value="reforço">
+                    <label for="reforço">Reforço</label>
+                    <input type="radio" name="dose" id="dose única" value="dose única">
+                    <label for="dose única">Dose Única</label>
+                </div>
+                <div>
+                    <label for="comprovante">Comprovante da vacina</label> 
+                    <input type="file" name="comprovante" id="comprovante"></input>
+                    <img>
+                </div>
+                <div><label for="dataProx">Próxima Vacinação</label><input type="date" name="dataProx" id="dataProx" value="12/10/2022"></div>
+                <input type="submit">Salvar alterações</input>
+            </form>
+            
+        </main>
+
+    </body>
+</html>

@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Averia Libre';
+    font-style: normal;
+    font-weight: 400;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+    background-color: #C1E7E3;
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+
+}
+
+nav {
+    margin-right: 35px;
+}
+
+#logo {
+    width: 51px;
+    height: 51px;
+    margin-left: 16px;
+    margin-right: 18px;
+    /* background-color: #49B976; */
+}
+
+#titulo {
+    font-family: 'Averia Libre';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 57px;
+    color: #419ED7;
+}
+
+main {
+    background-color: #ADD4D0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+}
+
+button {
+    padding: 0;
+    border: none;
+}
+
+label{
+    margin-right: 25px;
+}
+
+.formDados{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 30px;
+    line-height: 43px;
+    align-content: space-between;
+    margin: 50px;
+    background-color: rebeccapurple;
+}
+
+.formItem {
+    display: flex;
+    background-color: red;
+    margin: 10px;
+}
+
+.formLabel{
+    
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.formInput {
+    align-self: start;
+    height: 40px;
+    font-family: 'Averia Libre';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 43px;
+    color: #419ED7;
+    border: none;
+    width: 25%;
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+#comprovante {
+    color: white;
+    font-size: 18px;
+    line-height: 23px;
+    background-color: #419ED7;
+    border: none;
+    align-self: start;
+}
+
+.botao {
+    background-color: #419ED7;
+    color: white;
+    font-family: 'Averia Libre';
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 8px 5px grey;
+    text-decoration: none;
+}
+
+.simples {
+    margin: 10px;
+}
+
+.danger {
+    background-color: #FD7979;
+}
+
+.save {
+   background-color: #49B976;
+   width: auto;
+   align-self: center;
+   margin: 50px;
+}

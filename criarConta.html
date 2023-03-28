@@ -12,25 +12,35 @@
     </head>
     <body>
         <header>
-            <span id="titulo"><img id="logo" href="img/logo.png"></img>MyHealth</span>
+            <div id="titulo"><img id="logo" src="./img/logo.png"></img>MyHealth</div>
         </header>
         <main>
-            <form action="">
-                <div><label for="nome">Nome completo</label><input type="text" id="nome" name="nome" value="Juandir Pereira"></div>
-                <div>Sexo
-                    <input type="radio" name="sexo" id="masculino" value="masculino">
-                    <label for="masculino">Masculino</label>
-                    <input type="radio" name="sexo" id="feminino" value="feminino">
-                    <label for="feminino">Feminino</label>
+            <form action="" class="formDados">
+                <div class="formContainer">
+                    <label class="formLabel" for="nome">Nome completo</label>
+                    <input class="formInput" type="text" id="nome" name="nome" value="Juandir Pereira">
+                    <div class="formLabel">Sexo</div>
+                    <div class="formInput" id="generos">
+                        <input type="radio" name="sexo" id="masculino" value="masculino">
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" name="sexo" id="feminino" value="feminino">
+                        <label for="feminino">Feminino</label>
+                    </div>
+                    <label class="formLabel" for="dataNac">Data de nascimento</label>
+                    <input class="formInput" type="date" id="dataNasc" name="dataNasc" value="12/08/2022">
+                    <label class="formLabel" for="email">E-mail</label>
+                    <input class="formInput" type="email" name="email" id="email" value="juandir@gmail.com">
+                    <label class="formLabel" for="senha">Senha</label>
+                    <input class="formInput" type="password" id="senha" name="senha" value="">
+                    <label class="formLabel senhaRep" for="senhaRep">Repetir senha</label>
+                    <div class="formInput">
+                        <input  type="password" name="senhaRep" id="senhaRep" value="">
+                        <p class="erro">Senha não confere!</p>
+                    </div>
+                    
                 </div>
-                <div><label for="dataNac">Data de nascimento</label><input type="date" id="dataNasc" name="dataNasc" value="12/08/2022"></div>
-                <div><label for="email">E-mail</label><input type="email" name="email" id="email" value="juandir@gmail.com"></div>
-                <div><label for="senha">Senha</label><input type="password" id="senha" name="senha" value=""></div>
-                <div><label for="senhaRep">Repetir senha</label><input type="password" name="senhaRep" id="senhaRep"value=""></div>
-                <div>Senha não confere!</div>
-                <div>
-                    <input type="submit">Cadastrar</input>
-                </div>
+                    <button type="submit" class="botao save">Cadastrar</input>
+                
             </form>
             
         </main>

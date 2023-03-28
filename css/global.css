@@ -52,56 +52,7 @@ button {
     border: none;
 }
 
-label{
-    margin-right: 25px;
-}
 
-.formDados{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-size: 30px;
-    line-height: 43px;
-    align-content: space-between;
-    margin: 50px;
-    background-color: rebeccapurple;
-}
-
-.formItem {
-    display: flex;
-    background-color: red;
-    margin: 10px;
-}
-
-.formLabel{
-    
-    align-self: flex-start;
-    align-items: flex-start;
-}
-
-.formInput {
-    align-self: start;
-    height: 40px;
-    font-family: 'Averia Libre';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 43px;
-    color: #419ED7;
-    border: none;
-    width: 25%;
-    align-self: flex-end;
-    align-items: flex-end;
-}
-
-#comprovante {
-    color: white;
-    font-size: 18px;
-    line-height: 23px;
-    background-color: #419ED7;
-    border: none;
-    align-self: start;
-}
 
 .botao {
     background-color: #419ED7;
@@ -113,6 +64,10 @@ label{
     padding: 10px;
     box-shadow: 2px 8px 5px grey;
     text-decoration: none;
+}
+
+.botao:hover{
+    cursor: pointer;
 }
 
 .simples {
@@ -128,4 +83,16 @@ label{
    width: auto;
    align-self: center;
    margin: 50px;
+}
+
+.radio {
+    background-color: white;
+    border: none;
+    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.radio:checked {
+   color: #419ED7;
 }

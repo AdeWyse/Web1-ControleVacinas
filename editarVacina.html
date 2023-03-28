@@ -17,41 +17,37 @@
                 <a  href="" class="botao simples">Minhas vacinas</a>
                 <button class="botao simples">Logout</button>
             </nav>
-           
         </header>
         <main>
             <button class="botao danger">Excluir</button>
             <form action="" class="formDados">
-                <div class="formItem">
-                    <label fname="dataVac"class="formLabel">Data de vacinação</label>
-                    <input type="date" name="dataVac" class="formInput" id="dataVac" value="12/08/2022">
-                </div>
-                <div class="formItem">
-                    <label for="vacina" class="formLabel">Vacina</label>
-                    <input type="text" value="Hepatite B" class="formInput">
-                </div>
-                <div class="formItem">Dose
-                    <input type="radio" name="dose" id="1a. dose" value="1a. dose">
-                    <label for="1a. dose">1a. Dose</label>
-                    <input type="radio" name="dose" id="2a. dose" value="2a. dose">
-                    <label for="2a. dose">2a. Dose</label>
-                    <input type="radio" name="dose" id="3a. dose" value="3a. dose">
-                    <label for="3a. dose">2a. Dose</label>
-                    <input type="radio" name="dose" id="reforço" value="reforço">
-                    <label for="reforço">Reforço</label>
-                    <input type="radio" name="dose" id="dose única" value="dose única">
-                    <label for="dose única">Dose Única</label>
-                </div>
-                <div class="formItem">
-                    <label for="comprovante" class="formLabel">Comprovante da vacina</label> 
-                    <div class="formInput">
-                        <input type="file" name="comprovante" id="comprovante"></input>
-                        <img>
+                <div class="formContainer">
+                        <label fname="dataVac"class="formLabel">Data de vacinação</label>
+                        <input type="date" name="dataVac" class="formInput" id="dataVac" value="12/08/2022">
+                        <label for="vacina" class="formLabel">Vacina</label>
+                        <input type="text" value="Hepatite B" class="formInput">
+                    <div class="formLabel">Dose</div>
+                    <div class="formInput" id="radios">
+                        <input type="radio" name="dose" class="radio" id="1a. dose" value="1a. dose">
+                        <label for="1a. dose" >1a. Dose</label>
+                        <input type="radio" name="dose" class="radio" 
+                        id="2a. dose" value="2a. dose">
+                        <label for="2a. dose">2a. Dose</label>
+                        <input type="radio" name="dose" class="radio" id="3a. dose" value="3a. dose">
+                        <label for="3a. dose">3a. Dose</label>
+                        <input type="radio" name="dose" class="radio" id="reforço" value="reforço">
+                        <label for="reforço">Reforço</label>
+                        <input type="radio" name="dose" class="radio" id="dose única" value="dose única">
+                        <label for="dose única">Dose Única</label>
                     </div>
-                </div>
-                <div class="formItem">
-                    <label for="dataProx" class="formLabel">Próxima Vacinação</label>
-                    <input type="date" name="dataProx" class="formInput" id="dataProx" value="12/10/2022">
+                        <div class="formLabel">Comprovante da vacina</div>
+                        <div class="formInput2">
+                            <label for="comprovante" class="botao" id="labelComprovante">Selecionar imagem...</label> 
+                            <input type="file" name="comprovante" id="comprovante"></input>
+                            <img  class="comprovanteImagem" src="/img/comprovanteVacina.jpg" alt="comprovante de vacinação">
+                        </div>
+                        <label for="dataProx" class="formLabel">Próxima Vacinação</label>
+                        <input type="date" name="dataProx" class="formInput" id="dataProx" value="12/10/2022">
                 </div>
                 <button type="submit" class="botao save">Salvar alterações</button>
             </form>

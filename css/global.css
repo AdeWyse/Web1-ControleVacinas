@@ -94,3 +94,41 @@ button {
 .radio:checked {
    color: #419ED7;
 }
+
+.erro{
+    color: #FD7979;
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 10px;
+
+}
+
+.formLongoDados{
+    display: flex;
+    flex-direction: row;
+}
+
+.formLongoInput{
+    border:none;
+    width: 80%;
+    height: 50px;
+    font-family: 'Averia Libre';
+    font-size: 24px;
+    line-height: 29px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #419ED7;
+
+}
+
+.formLongoLabel{
+    width: 20%;
+    flex-direction: row;
+    font-family: 'Averia Libre';
+    font-size: 24px;
+    line-height: 20px;
+    margin-top: 15px;
+}
+

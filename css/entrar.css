@@ -1,0 +1,34 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formLongo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+}
+
+.formLongoInput{
+   margin: 20px;
+}
+
+.erro{
+    font-size: 20px;
+    text-align: center;
+}
+
+#esqueci{
+    font-family: 'Averia Libre';
+    font-size: 18px;
+    line-height: 29px;
+    margin-left: 20px;
+    padding: 10px;
+    color: #419ED7;
+}
+

@@ -73,12 +73,3 @@ label{
     line-height: 43px;
 }
 
-.erro{
-    color: #FD7979;
-    grid-column: 2;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    line-height: 10px;
-
-}

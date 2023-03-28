@@ -1,24 +1,31 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Página login do MyHealth. Um site para contorlar as suas vacinas" >
+        <meta name="description" content="Página de recuperação de senha do MyHealth. Um site para contorlar as suas vacinas" >
         <title>MyHealth - Entrar</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="./css/global.css">
+        <link rel="stylesheet" href="./css/entrar.css">
     </head>
     <body>
         <header>
-            <span><img href="img/logo.png"></img>MyHealth</span>
+            <div id="titulo"><img id="logo" src="./img/logo.png"></img>MyHealth</div>
         </header>
         <main>
-            <form action="">
-                <div><label for="email">E-mail</label>><input type="email" id="email" name="email" value="juandir@gmail.com"></div>
-                <div><label for="senha">Senha</label><input type="password" id="senha" name="senha" value=""></div>
-                <div>E-mail ou senha inválidos</div>
-                <div><input type="submit">Entrar</input></div>
+            <form action="" class="formLongo">
+                <div class="">
+                    <label class="formLongoLabel" for="email">E-mail</label>
+                    <input class="formLongoInput" type="email" id="email" name="email" value="juandir@gmail.com">
+                    <label class="formLongoLabel" for="senha">Senha</label>
+                    <input class="formLongoInput" type="password" id="senha" name="senha" value="">
+                    <p class="erro">E-mail e/ou senha inválidos.</p>
+                </div>
+                <button type="submit" class="botao save">Entrar</button>
             </form>
-            
-            <a href="recuperarSenha.html">Esqueci minha senha</a>
+            <a href="recucuperarSenha.html" id="esqueci">Esqueci minha senha</a>
         </main>
-
     </body>
 </html>

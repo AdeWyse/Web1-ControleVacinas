@@ -1,7 +1,12 @@
-.danger {
+.excluir {
     position: absolute;
     right: 20px;
     margin-top: 20px;
+    background-color: #FD7979;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 label{
@@ -94,19 +99,21 @@ label{
 
 .popUpBox{
     background-color: white;
-    width: 45%;
+    width: 50%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2%;
 }
 
 .popUpButtons{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    background-color: red;
-    width: 90%;
+    width: 100%;
     padding-bottom: 5%;
 }
 
@@ -117,10 +124,12 @@ label{
     text-align: center;
 }
 
-.save{
-    margin: 0;
+.danger{
+    margin: 5px;
+    width: 220px;
 }
 
-.danger{
-    margin: 0;
+.simples{
+    margin: 5px;
+    width: 220px;
 }

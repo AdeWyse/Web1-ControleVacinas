@@ -3,39 +3,85 @@
         <meta charset="utf-8">
         <meta name="description" content="Página home do MyHealth. Um site para contorlar as suas vacinas" >
         <title>MyHealth - Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="./css/global.css">
+        <link rel="stylesheet" href="./css/home.css">
     </head>
     <body>
         <header>
-            <span><img href="img/logo.png"></img>MyHealth</span>
-            <span><button>Minhas vacinas</button></span>
-            <span><button>Logout</button></span>
+            <div id="titulo"><img id="logo" src="./img/logo.png"></img>MyHealth</div>
+            <nav>
+                <a  href="" class="botao simples">Minhas vacinas</a>
+                <button class="botao simples">Logout</button>
+            </nav>
         </header>
         <main>
-            <input type="text">
-            <section>
-                <ul>
+            <div class="searchBar"><img class="searchIcon" src="/img/search-32x32.png"></img><input class="searchInput" type="text" placeholder="PESQUISAR VACINA..."></div>
+            <div class="contentVacinas">
+                <ul class="contentVacinasLista">
                     <li>
-                        <div>
+                        <div class="listItem">
                             <h2>BBCG</h2>
-                            <div>dose única</div>
-                            <div>11/06/2022</div>
-                            <img>
-                            <div>Não há próxima dose</div>
+                            <div class="botao dose"><p class="doseText">Dose única</p></div>
+                            <div class="data">11/06/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Não há próxima dose</div>
+                        </div>
+                            
+                    </li>
+                    <li>
+                        <div class="listItem">
+                            <h2>Hepatite B</h2>
+                            <div class="botao dose"><p class="doseText">1a dose</p></div>
+                            <div class="data">11/08/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Próxima dose em 11/10/2022</div>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="listItem">
+                            <h2>BBCG</h2>
+                            <div class="botao dose"><p class="doseText">Dose única</p></div>
+                            <div class="data">11/06/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Não há próxima dose</div>
+                        </div>
+                            
+                    </li>
+                    <li>
+                        <div class="listItem">
                             <h2>Hepatite B</h2>
-                            <div>1° dose</div>
-                            <div>11/08/2022</div>
-                            <img>
-                            <div>Próxima dose em 11/10/2022</div>
+                            <div class="botao dose"><p class="doseText">1a dose</p></div>
+                            <div class="data">11/08/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Próxima dose em 11/10/2022</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="listItem">
+                            <h2>BBCG</h2>
+                            <div class="botao dose"><p class="doseText">Dose única</p></div>
+                            <div class="data">11/06/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Não há próxima dose</div>
+                        </div>
+                            
+                    </li>
+                    <li>
+                        <div class="listItem">
+                            <h2>Hepatite B</h2>
+                            <div class="botao dose"><p class="doseText">1a dose</p></div>
+                            <div class="data">11/08/2022</div>
+                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
+                            <div class="dataProx">Próxima dose em 11/10/2022</div>
                         </div>
                     </li>
                 </ul>
-            </section>
-            <button>Nova vacina</button>
+            </div>
+            <button class="botao save">Nova vacina</button>
         </main>
 
     </body>

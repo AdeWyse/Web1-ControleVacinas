@@ -76,6 +76,7 @@ button {
     background-color: #FD7979;
 }
 
+
 .save {
    background-color: #49B976;
    width: auto;
@@ -90,6 +91,8 @@ button {
     width: 25px;
     height: 25px;
 }
+
+
 
 .radio:checked {
    color: #419ED7;

@@ -46,7 +46,7 @@ main{
 .contentVacinasLista{
     
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     flex-direction: row;
     flex-wrap:wrap;
@@ -137,4 +137,12 @@ h2{
 
 .save{
     margin: 25px
+}
+
+.save{
+    margin-bottom: 2em;
+}
+
+a{
+    text-decoration: none;
 }

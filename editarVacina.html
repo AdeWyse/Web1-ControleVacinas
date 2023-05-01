@@ -21,41 +21,16 @@
         <main>
             <button class="botao excluir" onclick="toggleConfirmacao()">Excluir</button>
             <form action="" class="formDados">
-                <div class="formContainer">
-                        <label fname="dataVac"class="formLabel">Data de vacinação</label>
-                        <input type="date" name="dataVac" class="formInput" id="dataVac" value="2022-08-12">
-                        <label for="vacina" class="formLabel">Vacina</label>
-                        <input type="text" value="Hepatite B" class="formInput">
-                    <div class="formLabel">Dose</div>
-                    <div class="formInput" id="radios">
-                        <input type="radio" name="dose" class="radio" id="1a. dose" value="1a. dose">
-                        <label for="1a. dose" >1a. Dose</label>
-                        <input type="radio" name="dose" class="radio" 
-                        id="2a. dose" value="2a. dose">
-                        <label for="2a. dose">2a. Dose</label>
-                        <input type="radio" name="dose" class="radio" id="3a. dose" value="3a. dose">
-                        <label for="3a. dose">3a. Dose</label>
-                        <input type="radio" name="dose" class="radio" id="reforço" value="reforço">
-                        <label for="reforço">Reforço</label>
-                        <input type="radio" name="dose" class="radio" id="dose única" value="dose única">
-                        <label for="dose única">Dose Única</label>
-                    </div>
-                        <div class="formLabel">Comprovante da vacina</div>
-                        <div class="formInput2">
-                            <label for="comprovante" class="botao" id="labelComprovante">Selecionar imagem...</label> 
-                            <input type="file" name="comprovante" id="comprovante"></input>
-                            <img  class="comprovanteImagem" src="/img/comprovanteVacina.jpg" alt="comprovante de vacinação">
-                        </div>
-                        <label for="dataProx" class="formLabel">Próxima Vacinação</label>
-                        <input type="date" name="dataProx" class="formInput" id="dataProx" value="2022-08-12">
+                <div class="formContainer" id="container">
+                     
                 </div>
-                <button type="submit" class="botao save">Salvar alterações</button>
+                <button type="submit" onCLick="editarVacina()" class="botao save">Salvar alterações</button>
             </form>
             <div class="popUp" id="popUp">
                 <div class="popUpBox">
                     <p class="warning">Tem certeza que deseja remover essa vacina?</p>
                     <div class="popUpButtons">
-                        <button class="botao danger" id="confirma">Sim</button>
+                        <button class="botao danger" onClick="excluirVacina()" id="confirma">Sim</button>
                         <button class="botao simples" onclick="toggleConfirmacao()" id="naoConfirma">Não</button>
                     </div>
                 </div>
@@ -76,4 +51,5 @@
             
         }
     </script>
+     <script src="./javascript/editarVacina.js"></script>
 </html>

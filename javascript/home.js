@@ -6,7 +6,7 @@ const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 
 if(!logadoJSON){
-    window.location.href = "entrar.html";
+    window.location.href = "index.html";
 }
 
 

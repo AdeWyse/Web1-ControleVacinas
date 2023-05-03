@@ -4,6 +4,10 @@ main{
     align-items: center;
 }
 
+header{
+    margin-right: 1em;
+}
+
 .formLongo{
     display: flex;
     flex-direction: column;

@@ -5,14 +5,35 @@ const id = urlParams.get('id');
 const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 if(!logadoJSON){
-    window.location.href = "login.html";
+    window.location.href = "entrar.html";
 }
 
 const vacinasJSON = localStorage.getItem("vacinas");
 const vacinas = vacinasJSON ? JSON.parse(vacinasJSON) : [];
 const vacinaSelecionada = vacinas[id];
 const container = document.getElementById("container");
-var prox = vacinaSelecionada.dataProx;
+var prox =  vacinas[id].dataProx;
+var radioSelecionado = ["","","","",""];
+const selecionado = vacinaSelecionada.dose;
+switch (selecionado) {
+    case '1a. dose':
+      radioSelecionado[0] = 'checked="checked"'
+      break;
+    case '2a. dose':
+        radioSelecionado[1] = 'checked="checked"'
+      break;
+    case '3a. dose':
+        radioSelecionado[2] ='checked="checked"'
+      break;
+      case 'Reforço':
+        radioSelecionado[3] = 'checked="checked"'
+      break;
+      case 'Dose única':
+        radioSelecionado[4] = 'checked="checked"'
+        break;
+    default:
+      console.log('Sorry, we do not have that fruit.');
+  }
 if(prox[0] == 'N' || prox.length < 1){
     prox = '1999-01-01'
 }
@@ -22,16 +43,15 @@ container.innerHTML = `   <label fname="dataVac"class="formLabel">Data de vacina
 <input type="text" value="`+vacinaSelecionada.vacinaNome+`" name="vacinaNome" id="vacinaNome" class="formInput">
 <div class="formLabel">Dose</div>
 <div class="formInput" id="radios">
-<input type="radio" name="dose" class="radio" id="1a. dose" value="1a. dose">
+<input type="radio" name="dose" class="radio" `+radioSelecionado[0]+` id="1a. dose" value="1a. dose">
 <label for="1a. dose" >1a. Dose</label>
-<input type="radio" name="dose" class="radio" 
-id="2a. dose" value="2a. dose">
+<input type="radio" name="dose" class="radio" `+radioSelecionado[1]+` id="2a. dose" value="2a. dose">
 <label for="2a. dose">2a. Dose</label>
-<input type="radio" name="dose" class="radio" id="3a. dose" value="3a. dose">
+<input type="radio" name="dose" class="radio" `+radioSelecionado[2]+` id="3a. dose" value="3a. dose">
 <label for="3a. dose">3a. Dose</label>
-<input type="radio" name="dose" class="radio" id="reforço" value="Reforço">
+<input type="radio" name="dose" class="radio" `+radioSelecionado[3]+ `id="reforço" value="Reforço">
 <label for="reforço">Reforço</label>
-<input type="radio" name="dose" class="radio" id="dose única" value="Dose única">
+<input type="radio" name="dose" class="radio" `+radioSelecionado[4]+` id="dose única" value="Dose única">
 <label for="dose única">Dose Única</label>
 </div>
 <div class="formLabel">Comprovante da vacina</div>

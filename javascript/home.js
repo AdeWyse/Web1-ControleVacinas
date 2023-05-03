@@ -6,7 +6,7 @@ const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 
 if(!logadoJSON){
-    window.location.href = "login.html";
+    window.location.href = "entrar.html";
 }
 
 
@@ -39,6 +39,7 @@ vacinas.forEach(vacina => {
         </a>
       `;
       list.appendChild(novoItem);
+      id++;
     };
     
     

@@ -1,7 +1,7 @@
 const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 if(!logadoJSON){
-    window.location.href = "login.html";
+    window.location.href = "entrar.html";
 }
 
 const inputElement = document.getElementById("comprovante");
@@ -15,6 +15,7 @@ reader = new FileReader();
 reader.readAsDataURL(file);
 reader.onload = () => {
     imageElement.src = reader.result;
+    imageElement.className = 'comprovanteImagem';
 };
 });
 

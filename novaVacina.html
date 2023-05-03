@@ -12,19 +12,19 @@
     </head>
     <body>
         <header>
-            <a id="titulo" href="/"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
+            <a id="titulo" href="/home.html"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
             <nav>
                 <a  href="/home.html" class="botao simples">Minhas vacinas</a>
-                <button class="botao simples">Logout</button>
+                <button onclick="logout()" class="botao simples">Logout</button>
             </nav>
         </header>
         <main>
             <form action="" class="formDados">
                 <div class="formContainer">
                         <label name="dataVac"class="formLabel">Data de vacinação</label>
-                        <input type="date" name="dataVac" class="formInput" id="dataVac" value="2022-08-12">
+                        <input type="date" name="dataVac" class="formInput" id="dataVac" >
                         <label for="vacina" class="formLabel" for="vacinaNome">Vacina</label>
-                        <input type="text" value="Hepatite B" id="vacinaNome" name="vacinaNome" class="formInput">
+                        <input type="text"  id="vacinaNome" name="vacinaNome" class="formInput">
                     <div class="formLabel">Dose</div>
                     <div class="formInput" id="radios">
                         <input type="radio" name="dose" class="radio" id="1a. dose" value="1a. dose">
@@ -43,15 +43,16 @@
                         <div class="formInput2">
                             <label for="comprovante" class="botao" id="labelComprovante">Selecionar imagem...</label> 
                             <input type="file" name="comprovante" id="comprovante"></input>
-                            <img  class="comprovanteImagem" src="" alt="comprovante de vacinação" id="selectedImage">
+                            <img  class="escondido" src="" alt="comprovante de vacinação" id="selectedImage">
                         </div>
                         <label for="dataProx" class="formLabel">Próxima Vacinação</label>
-                        <input type="date" name="dataProx" class="formInput" id="dataProx" value="2022-08-12">
+                        <input type="date" name="dataProx" class="formInput" id="dataProx" >
                 </div>
                 <button onClick="cadastrarVacina()" class="botao save">Cadastrar</button>
             </form>
             
         </main>
         <script src="./javascript/novaVacina.js"></script>
+        <script src="./javascript/logout.js"></script>
     </body>
 </html>

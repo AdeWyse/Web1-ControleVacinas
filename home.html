@@ -12,10 +12,10 @@
     </head>
     <body>
         <header>
-            <a id="titulo" href="/"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
+            <a id="titulo" href="/home.html"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
             <nav>
                 <a  href="/home.html" class="botao simples">Minhas vacinas</a>
-                <button class="botao simples">Logout</button>
+                <button onclick="logout()" class="botao simples">Logout</button>
             </nav>
         </header>
         <main>
@@ -38,5 +38,11 @@
             <a class="botao save" href="novaVacina.html">Nova vacina</a>
         </main>
         <script src="./javascript/home.js"></script>
+        <script>
+            function logout(){
+                localStorage.removeItem('usuarioLogado');
+                window.location.href = "index.html";
+            }
+        </script>
     </body>
 </html>

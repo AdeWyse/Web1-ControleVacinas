@@ -15,7 +15,7 @@
             <a id="titulo" href="/"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
             <nav>
                 <a  href="/home.html" class="botao simples">Minhas vacinas</a>
-                <button class="botao simples">Logout</button>
+                <button onclick="logout()" class="botao simples">Logout</button>
             </nav>
         </header>
         <main>
@@ -24,7 +24,7 @@
                 <div class="formContainer" id="container">
                      
                 </div>
-                <button type="submit" onCLick="editarVacina()" class="botao save">Salvar alterações</button>
+                <div onCLick="editarVacina()" class="botao save">Salvar alterações</div>
             </form>
             <div class="popUp" id="popUp">
                 <div class="popUpBox">
@@ -48,7 +48,11 @@
             }else{
                 popUp.style.display = "none";
             }
-            
+        }
+
+        function logout(){
+            localStorage.removeItem('usuarioLogado');
+            window.location.href = "index.html";
         }
     </script>
      <script src="./javascript/editarVacina.js"></script>

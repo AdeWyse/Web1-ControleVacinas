@@ -13,6 +13,16 @@ label{
     margin-right: 25px;
 }
 
+.trashIcon{
+    width: 30px;
+    height: 28px;
+}
+
+.excluir{
+    display: flex;
+    justify-content: center;
+}
+
 .formDados{
     display: flex;
     flex-direction: column;

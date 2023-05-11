@@ -1,3 +1,6 @@
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
 function criarConta(){
     const senha = document.getElementById("senha").value;
     const senhaRep = document.getElementById("senhaRep").value;
@@ -16,12 +19,17 @@ function criarConta(){
             senha: senha
         };
 
-        const usuariosJSON = localStorage.getItem("usuarios");
-        const usuarios = usuariosJSON ? JSON.parse(usuariosJSON) : [];
-
-        usuarios.push(usuario);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        window.location.href = "index.html";
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            localStorage.setItem("usuarioLogado", user);
+            window.location.href = "index.html";
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
     }
 }
 
@@ -37,3 +45,5 @@ function checarSenha(senha, senhaRep){
         return false;
     }
 }
+
+

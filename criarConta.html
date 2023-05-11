@@ -9,9 +9,78 @@
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
         <link rel="stylesheet" href="./css/global.css">
         <link rel="stylesheet" href="./css/criarConta.css">
-        <script src="./javascript/criarConta.js"></script>
     </head>
     <body>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+            import { getAuth } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+            import {createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyBBRZZFQlmx-XAu2lG_NqLymPA1rammWB0",
+                authDomain: "myhealth-d1dcc.firebaseapp.com",
+                projectId: "myhealth-d1dcc",
+                storageBucket: "myhealth-d1dcc.appspot.com",
+                messagingSenderId: "956659268017",
+                appId: "1:956659268017:web:034ca0be6970e04c332590",
+                measurementId: "G-YRSQ1PBKGB"
+                };
+          
+            // Initialize Firebase
+            var app = initializeApp(firebaseConfig);
+            
+            const criarContaBtn = document.getElementById("criarContaBtn");
+            criarContaBtn.addEventListener("click", criarConta);
+
+            function criarConta(){
+                const senha = document.getElementById("senha").value;
+                const senhaRep = document.getElementById("senhaRep").value;
+
+
+                if(checarSenha(senha, senhaRep)){
+                    const nome = document.getElementById("nome").value;
+                    const genero = document.getElementById("generos").value;
+                    const dataNascimento = document.getElementById("dataNasc").value;
+                    const email = document.getElementById("email").value;
+
+                    const usuario = {
+                        nome: nome,
+                        genero: genero,
+                        email: email,
+                        senha: senha
+                    };
+
+                    createUserWithEmailAndPassword(getAuth(app), usuario.email, usuario.senha)
+                    .then((userCredential) => {
+                        var user = userCredential.user;
+                        localStorage.setItem("usuarioLogado", user);
+                        window.location.href = "index.html";
+                    })
+                    .catch((error) => {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                    });
+                }
+            }
+
+            function checarSenha(senha, senhaRep){
+                const erroSenha = document.getElementById("erroSenha");
+
+                if(senha === senhaRep){
+                    erroSenha.className = 'escondido';
+                    return true
+                }else{
+                    erroSenha.className = 'erro';
+                    return false;
+                }
+            }
+          </script>
+
         <header>
             <a id="titulo" href="/"><img id="logo" src="./img/logo.png"></img>MyHealth</a>
         </header>
@@ -40,9 +109,11 @@
                     </div>
                     
                 </div>
-                    <div onClick="criarConta()" class="botao save">Cadastrar</div>
+                    <div id="criarContaBtn" class="botao save">Cadastrar</div>
             </form>
             
         </main>
+
+
     </body>
 </html>

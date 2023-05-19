@@ -47,7 +47,8 @@
                     const genero = document.getElementById("generos").value;
                     const dataNascimento = document.getElementById("dataNasc").value;
                     const email = document.getElementById("email").value;
-
+                    console.log(dataNascimento);
+/*                 
                     const usuario = {
                         nome: nome,
                         genero: genero,
@@ -57,6 +58,7 @@
 
                     createUserWithEmailAndPassword(getAuth(app), usuario.email, usuario.senha)
                     .then((userCredential) => {
+                         
                         var user = userCredential.user;
                         localStorage.setItem("usuarioLogado", user);
                         window.location.href = "index.html";
@@ -64,9 +66,10 @@
                     .catch((error) => {
                         var errorCode = error.code;
                         var errorMessage = error.message;
-                    });
+                    });*/
                 }
             }
+
 
             function checarSenha(senha, senhaRep){
                 const erroSenha = document.getElementById("erroSenha");

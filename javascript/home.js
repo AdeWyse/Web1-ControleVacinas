@@ -70,7 +70,6 @@ function cardVacina(vacina, id){
       <div class="data">`+dataVacFormatada+`</div>
       <div class="vacinaImagemDiv"><img class="vacinaImagem" src="`+src+`"></div>
       <div class="dataProx">`+dataProxFormatada+`</div>
-    </a>
-  `;
+    </a>`;
   return cardVacina;
 }

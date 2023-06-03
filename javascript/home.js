@@ -1,27 +1,54 @@
 const vacinasJSON = localStorage.getItem("vacinas");
-
 const vacinas = JSON.parse(vacinasJSON);
 
-const logadoJSON = localStorage.getItem("usuarioLogado");
+const logadoJSON = localStorage.getItem("usuarioLogado"); // [{"uid":"A098IP26H3NPvZDM2Qfb05bjK0S2"}]
 const logado = JSON.parse(logadoJSON);
+
+const user = logado[0].uid;
 
 if(!logadoJSON){
     window.location.href = "index.html";
 }
 
 
-if(vacinasJSON){
-    const list = document.getElementById("listaVacinas");
-    //Contador temporário enquando as vacinas não tem id
-    var id = 0;
-vacinas.forEach(vacina => {
-    if(vacina.usuario == logado[0].email){
-        const novoItem = cardVacina(vacina, id);
-        list.appendChild(novoItem);
-        id++;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getFirestore, collection, doc , query, where,getDocs } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBBRZZFQlmx-XAu2lG_NqLymPA1rammWB0",
+    authDomain: "myhealth-d1dcc.firebaseapp.com",
+    projectId: "myhealth-d1dcc",
+    storageBucket: "myhealth-d1dcc.appspot.com",
+    messagingSenderId: "956659268017",
+    appId: "1:956659268017:web:034ca0be6970e04c332590",
+    measurementId: "G-YRSQ1PBKGB"
     };
-    });
-};
+
+var app = initializeApp(firebaseConfig);
+var db = getFirestore(app);
+
+const q = query(collection(db, "usuario"), where("userId", "==", user));
+
+const querySnapshot = await getDocs(q);
+
+const usuarioDoc = querySnapshot.docs[0];
+if (usuarioDoc) {
+    try {
+        const list = document.getElementById("listaVacinas");
+        const usuarioRef = doc(db, "usuario", usuarioDoc.id);
+        const vacinaCollectionRef = collection(usuarioRef, "vacinas");
+        const vacinaQuerySnapshot = await getDocs(vacinaCollectionRef);
+        vacinaQuerySnapshot.forEach((vacinaDoc) => {
+            const vacinaData = vacinaDoc.data();
+            const novoItem = cardVacina(vacinaData, vacinaDoc.id);
+                list.appendChild(novoItem);
+        });
+    } catch (error) {
+        console.error("Error loading vacinas: ", error);
+    }
+} else {
+console.error("Usuario not found");
+}
 
 function cardVacina(vacina, id){
     const dataVac = vacina.dataVacinacao;
@@ -37,7 +64,7 @@ function cardVacina(vacina, id){
     const cardVacina = document.createElement("li");
 
     cardVacina.innerHTML = `
-    <a href="editarVacina.html?id=`+id+`" class="listItem">
+    <a href="editarVacina.html?id=`+id+`" name="`+vacina.vacinaNome+`" class="listItem">
       <h2>`+vacina.vacinaNome+`</h2>
       <div class="botao dose"><p class="doseText">`+vacina.dose+`</p></div>
       <div class="data">`+dataVacFormatada+`</div>
@@ -47,4 +74,3 @@ function cardVacina(vacina, id){
   `;
   return cardVacina;
 }
-

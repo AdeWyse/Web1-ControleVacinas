@@ -19,30 +19,20 @@
             </nav>
         </header>
         <main>
-            <div class="searchBar"><img class="searchIcon" src="/img/search-32x32.png"></img><input class="searchInput" type="text" placeholder="PESQUISAR VACINA..."></div>
+            <div class="searchBar"><img class="searchIcon" src="/img/search-32x32.png"></img><input class="searchInput" type="text" id="search" placeholder="PESQUISAR VACINA..."></div>
             <div class="contentVacinas">
                 <ul class="contentVacinasLista" id="listaVacinas">
-                    <li>
-                        <div class="listItem">
-                            <h2>BBCG</h2>
-                            <div class="botao dose"><p class="doseText">Dose única</p></div>
-                            <div class="data">11/06/2022</div>
-                            <div class="vacinaImagemDiv"><img class="vacinaImagem" src="/img/comprovanteVacina.jpg"></div>
-                            <div class="dataProx">Não há próxima dose</div>
-                        </div>
-                            
-                    </li>
-
                 </ul>
             </div>
             <a class="botao save" href="novaVacina.html">Nova vacina</a>
         </main>
-        <script src="./javascript/home.js"></script>
+        <script type="module" src="./javascript/home.js"></script>
         <script>
             function logout(){
                 localStorage.removeItem('usuarioLogado');
                 window.location.href = "index.html";
             }
         </script>
+        <script src="./javascript/busca.js"></script>
     </body>
 </html>

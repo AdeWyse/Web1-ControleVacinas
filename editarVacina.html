@@ -24,13 +24,13 @@
                 <div class="formContainer" id="container">
                      
                 </div>
-                <div onCLick="editarVacina()" class="botao save">Salvar alterações</div>
+                <div class="botao save" id="salvarBtn">Salvar alterações</div>
             </form>
             <div class="popUp" id="popUp">
                 <div class="popUpBox">
                     <p class="warning">Tem certeza que deseja remover essa vacina?</p>
                     <div class="popUpButtons">
-                        <button class="botao danger" onClick="excluirVacina()" id="confirma">Sim</button>
+                        <button class="botao danger"  id="confirma">Sim</button>
                         <button class="botao simples" onclick="toggleConfirmacao()" id="naoConfirma">Não</button>
                     </div>
                 </div>
@@ -55,5 +55,5 @@
             window.location.href = "index.html";
         }
     </script>
-     <script src="./javascript/editarVacina.js"></script>
+     <script type="module" src="./javascript/editarVacina.js"></script>
 </html>

@@ -9,7 +9,7 @@ const logado = JSON.parse(logadoJSON);
 
 const user = logado[0].uid;
 
-
+var adicionadoComp = false;
 if(!logadoJSON){
     window.location.href = "entrar.html";
 }
@@ -159,6 +159,7 @@ loadHtml(selecionada);
     file = event.target.files[0];
     reader = new FileReader();
     reader.readAsDataURL(file);
+    adicionadoComp = true;
     reader.onload = () => {
         imageElement.src = reader.result;
         imageElement.className = 'comprovanteImagem';
@@ -199,9 +200,16 @@ loadHtml(selecionada);
                     break;
                 }
             };
-            const comprovanteFile = inputElement.files[0];
-            const imageSaved = await uploadImage(comprovanteFile, vacinaNome, dose); 
-            const comprovante = imageSaved;
+            var comprovante;
+            if(adicionadoComp){
+                const comprovanteFile = inputElement.files[0];
+                const imageSaved = await uploadImage(comprovanteFile, vacinaNome, dose); 
+                comprovante = imageSaved;
+            }else{
+                
+                comprovante = imageElement.src;
+            }
+           
             const dataProx = document.getElementById("dataProx").value;
             var prox = dataProx;
             if(dose == 'Dose única' || dose == 'Reforço'){

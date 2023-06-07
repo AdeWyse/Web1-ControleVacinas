@@ -7,12 +7,16 @@ const id = urlParams.get('id');
 const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 
-const user = logado[0].uid;
 
 var adicionadoComp = false;
-if(!logadoJSON){
-    window.location.href = "entrar.html";
+var user;
+
+if(logado == null){
+    window.location.href = "index.html";
+}else{
+    user = logado[0].uid;
 }
+
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-storage.js";

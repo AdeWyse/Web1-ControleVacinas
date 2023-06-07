@@ -1,13 +1,13 @@
-const vacinasJSON = localStorage.getItem("vacinas");
-const vacinas = JSON.parse(vacinasJSON);
 
 const logadoJSON = localStorage.getItem("usuarioLogado"); // [{"uid":"A098IP26H3NPvZDM2Qfb05bjK0S2"}]
 const logado = JSON.parse(logadoJSON);
 
-const user = logado[0].uid;
+var user;
 
-if(!logadoJSON){
+if(logado == null){
     window.location.href = "index.html";
+}else{
+    user = logado[0].uid;
 }
 
 

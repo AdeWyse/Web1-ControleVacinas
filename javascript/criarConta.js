@@ -38,8 +38,6 @@ function criarConta(){
         const usuario = {
             nome: nome,
             genero: genero,
-            email: email,
-            senha: senha
         };
 
         createUserWithEmailAndPassword(getAuth(app), usuario.email, usuario.senha)

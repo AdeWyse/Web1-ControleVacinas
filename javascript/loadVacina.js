@@ -7,12 +7,14 @@ const id = urlParams.get('id');
 const logadoJSON = localStorage.getItem("usuarioLogado");
 const logado = JSON.parse(logadoJSON);
 
-const user = logado[0].uid;
+var user;
 
-
-if(!logadoJSON){
-    window.location.href = "entrar.html";
+if(logado == null){
+    window.location.href = "index.html";
+}else{
+    user = logado[0].uid;
 }
+
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getFirestore, collection, addDoc, doc , query, where, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";

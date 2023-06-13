@@ -45,7 +45,6 @@ function criarConta(){
              
             var user = userCredential.user;
             const usuarioPlusID = { ...usuario, userId: user.uid };
-            console.log(usuarioPlusID);
 
             addDoc(collection(getFirestore(app), "usuario"), usuarioPlusID)
                 .then(() => {
